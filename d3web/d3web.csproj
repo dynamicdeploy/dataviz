@@ -21,7 +21,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <NuGetPackageImportStamp>4d8e747c</NuGetPackageImportStamp>
-    <ApplicationInsightsResourceId>/subscriptions/46011a00-1b1c-42ff-8d99-2406a0b5ed96/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/d3web</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>
+    </ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,7 +52,8 @@
     <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry">
       <HintPath>..\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.12.0-build17386\lib\net45\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web">
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web, Version=0.12.0.17386, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.Web.0.12.0-build17386\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -89,10 +92,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config" />
     <Content Include="data\flare.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="ApplicationInsights.config" />
     <None Include="Properties\PublishProfiles\d3jsweb.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -105,7 +108,9 @@
     <Content Include="index.html" />
     <Content Include="script.js" />
     <Content Include="styles.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
